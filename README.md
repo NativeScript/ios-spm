@@ -1,3 +1,3 @@
-# ns-v8-ios
+# NativeScriptSDK 
 
-A description of this package.
+Swift Package of the NativeScript v8 iOS runtime.
