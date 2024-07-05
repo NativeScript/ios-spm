@@ -12,7 +12,7 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "NativeScriptSDK",
-            targets: ["NativeScriptSource", "NativeScript"]),
+            targets: ["NativeScript"]),
     ],
     dependencies: [],
     targets: [
@@ -20,14 +20,14 @@ let package = Package(
             name: "NativeScript",
             path: "NativeScript.xcframework"
         ),
-        .target(
-            name: "NativeScriptSource", // This is your new source target
-            dependencies: ["NativeScript"], // It depends on the binary target
-            path: "Sources/NativeScriptSource", // This assumes you've added your Obj-C files in this directory
-            publicHeadersPath: ".", // Expose all headers in the directory as public
-            cSettings: [
-                .headerSearchPath(".") // Specify the path to your Objective-C files
-            ]
-        )
+        // .target(
+        //     name: "NativeScriptSource", // This is your new source target
+        //     dependencies: ["NativeScript"], // It depends on the binary target
+        //     path: "Sources/NativeScriptSource", // This assumes you've added your Obj-C files in this directory
+        //     publicHeadersPath: ".", // Expose all headers in the directory as public
+        //     cSettings: [
+        //         .headerSearchPath(".") // Specify the path to your Objective-C files
+        //     ]
+        // )
     ]
 )
