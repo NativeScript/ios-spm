@@ -23,7 +23,7 @@
 
 import PackageDescription
 
-let nsVersion = "9.0.4-next.2026-06-25-28199332498"
+let nsVersion = "9.1.0-alpha.12"
 let releaseBase = "https://github.com/NativeScript/ios/releases/download/v\(nsVersion)"
 
 let package = Package(
@@ -46,22 +46,22 @@ let package = Package(
         .binaryTarget(
             name: "NativeScript",
             url: "\(releaseBase)/NativeScript.xcframework.zip",
-            checksum: "533f1d80517ea824ca1fa27dcb24c49f1fcbb7fecf0f1b3415b25f1b796dff31"
+            checksum: "b4e9a37052f4156e6b3e2f053cacf61b966deaee7fdba31ffc49e01accdf61ed"
         ),
         .binaryTarget(
             name: "TKLiveSync",
             url: "\(releaseBase)/TKLiveSync.xcframework.zip",
-            checksum: "41398e2d321c2730c539337146d06351f4db66a09c3256be9b14a5bcfe823514"
+            checksum: "88a981ad57e966c041cb805911a5524d60ba761d1358887037bc24e64bfa616a"
         ),
         .binaryTarget(
             name: "NativeScriptVisionOS",
             url: "\(releaseBase)/NativeScript.visionos.xcframework.zip",
-            checksum: "b464d5d6994076a1a026f849aeed8ca9229f271c0d8d15e20d88d31cd3454edb"
+            checksum: "7b2caf186e362e63755ac35d735e4c150f26cd76677bbb9035278e28b2fae073"
         ),
         .binaryTarget(
             name: "TKLiveSyncVisionOS",
             url: "\(releaseBase)/TKLiveSync.visionos.xcframework.zip",
-            checksum: "245b64becf3373d4b1652751adb8bcf559574b28b53b9eb132974756b5a40ac7"
+            checksum: "fb7af5deb855e772e51267b741c6c5cb0d6af4b18137190595347531769b8c9c"
         ),
     ]
 )
