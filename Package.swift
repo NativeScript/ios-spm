@@ -31,7 +31,7 @@
 
 import PackageDescription
 
-let nsVersion = "9.1.0-next.2026-10-05-37352091060"
+let nsVersion = "9.1.0-next.2026-10-05-37355676239"
 let releaseBase = "https://github.com/NativeScript/ios/releases/download/v\(nsVersion)"
 
 let package = Package(
@@ -41,22 +41,29 @@ let package = Package(
         .macCatalyst(.v13),
     ],
     products: [
-        // iOS family (iphoneos + iphonesimulator + Mac Catalyst)
+        // iOS family (iphoneos + iphonesimulator + Mac Catalyst). Apps built by
+        // the NativeScript CLI link their own metadata and use this product.
         .library(name: "NativeScript", targets: ["NativeScript", "TKLiveSync"]),
-        // Backwards-compatible alias for the historical product name.
-        .library(name: "NativeScriptSDK", targets: ["NativeScript", "TKLiveSync"]),
+        // For embedding NativeScript into an existing app: also bundles default
+        // iOS SDK metadata, used when the host provides none of its own.
+        .library(name: "NativeScriptSDK", targets: ["NativeScript", "TKLiveSync", "NativeScriptDefaultMetadata"]),
     ],
     dependencies: [],
     targets: [
         .binaryTarget(
             name: "NativeScript",
             url: "\(releaseBase)/NativeScript.xcframework.zip",
-            checksum: "edda859bb0709cc7b16cd767c72d733b0625910077c6d5812864833eeb7e1e41"
+            checksum: "c2d8e7bd0d485c81e1d50c623a8f5ee043a6ee4904bf2ab8f7be9cfdfbac4750"
         ),
         .binaryTarget(
             name: "TKLiveSync",
             url: "\(releaseBase)/TKLiveSync.xcframework.zip",
-            checksum: "5e615457f7cd80fa9e2acafe139ed012821040e63b82ab792e2d355073102751"
+            checksum: "af3e0ada4cbd980f1345cb56dd70f7b647130c9dd9a3332d3480b8fb0602dafd"
+        ),
+        .binaryTarget(
+            name: "NativeScriptDefaultMetadata",
+            url: "\(releaseBase)/NativeScriptDefaultMetadata.xcframework.zip",
+            checksum: "28fbab9f777786c62e7be9d15ce2fd1a5b8ebb080cac3d134bf80079ebe0a697"
         ),
     ]
 )
