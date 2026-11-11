@@ -31,7 +31,7 @@
 
 import PackageDescription
 
-let nsVersion = "9.1.0-next.2026-11-11-43080423883"
+let nsVersion = "9.1.0-next.2026-11-11-43088276023"
 let releaseBase = "https://github.com/NativeScript/ios/releases/download/v\(nsVersion)"
 
 let package = Package(
@@ -53,17 +53,17 @@ let package = Package(
         .binaryTarget(
             name: "NativeScript",
             url: "\(releaseBase)/NativeScript.xcframework.zip",
-            checksum: "a376374ebf1a83b27682acc5ee5f3f009b32ca5b88de148e3273e8a3a64962b6"
+            checksum: "516a6879059cefb044452a8488d245cc30e942d51e83e874e73e89669f202588"
         ),
         .binaryTarget(
             name: "TKLiveSync",
             url: "\(releaseBase)/TKLiveSync.xcframework.zip",
-            checksum: "92c1df63dda6e6800dda1faa61542cfdb312740724fe1b8728b2aeadaebf7ef7"
+            checksum: "733b441039ae2c6b66b1c149238291ef3f52f186912979d3b94fbfdec443e0c5"
         ),
         .binaryTarget(
             name: "NativeScriptDefaultMetadata",
             url: "\(releaseBase)/NativeScriptDefaultMetadata.xcframework.zip",
-            checksum: "1e705143bd9d87d3d91ed5f3388c30483a970bc22aa066d4a3cf83ee11ee6929"
+            checksum: "a11046eef4e73fd76d4781aa5552096cc59681c4f59b240649ebdc7625ac55e6"
         ),
     ]
 )
