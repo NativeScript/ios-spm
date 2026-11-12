@@ -31,7 +31,7 @@
 
 import PackageDescription
 
-let nsVersion = "9.1.2-next.2026-11-11-43123132439"
+let nsVersion = "9.1.1"
 let releaseBase = "https://github.com/NativeScript/ios/releases/download/v\(nsVersion)"
 
 let package = Package(
@@ -39,6 +39,7 @@ let package = Package(
     platforms: [
         .iOS(.v13),
         .macCatalyst(.v13),
+        .visionOS(.v1),
     ],
     products: [
         // iOS family (iphoneos + iphonesimulator + Mac Catalyst). Apps built by
@@ -47,23 +48,35 @@ let package = Package(
         // For embedding NativeScript into an existing app: also bundles default
         // iOS SDK metadata, used when the host provides none of its own.
         .library(name: "NativeScriptSDK", targets: ["NativeScript", "TKLiveSync", "NativeScriptDefaultMetadata"]),
+        // visionOS family (xros + xrsimulator)
+        .library(name: "NativeScriptVisionOS", targets: ["NativeScriptVisionOS", "TKLiveSyncVisionOS"]),
     ],
     dependencies: [],
     targets: [
         .binaryTarget(
             name: "NativeScript",
             url: "\(releaseBase)/NativeScript.xcframework.zip",
-            checksum: "7b3ecd20500bf2bf71b0ee7787416403bfb1b3161f3fd76870e60814cf6e273a"
+            checksum: "027ce832dac4f0c40190f6a5ea4019c3e7644cc727cefd7cce9e417411b23249"
         ),
         .binaryTarget(
             name: "TKLiveSync",
             url: "\(releaseBase)/TKLiveSync.xcframework.zip",
-            checksum: "2a842cfac43fd7c355f5e3f51cff465fb812145e3cb80dc72ea31df83763eb55"
+            checksum: "950192a84f03d4308523a1572ad35ee0510b98b64e68b070d07d9c28be3ecb78"
         ),
         .binaryTarget(
             name: "NativeScriptDefaultMetadata",
             url: "\(releaseBase)/NativeScriptDefaultMetadata.xcframework.zip",
-            checksum: "dba156d9f672c6e88298728886f317fbff98d7d25287bfb6441aeb8915605f1a"
+            checksum: "3506db1e7230a495aa28f20b6fe2a5757a7cac0251541c39e919e3d5db4e3a8d"
+        ),
+        .binaryTarget(
+            name: "NativeScriptVisionOS",
+            url: "\(releaseBase)/NativeScript.visionos.xcframework.zip",
+            checksum: "f73764a52cb216d3058178e9d05717e204face4dd2dc02ca442a2fb5ff14a9cc"
+        ),
+        .binaryTarget(
+            name: "TKLiveSyncVisionOS",
+            url: "\(releaseBase)/TKLiveSync.visionos.xcframework.zip",
+            checksum: "07c962bcaf71939523b69ec1eda71e40fc898cd24636c6df88a77be4b1fbde38"
         ),
     ]
 )
