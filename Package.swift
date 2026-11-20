@@ -31,7 +31,7 @@
 
 import PackageDescription
 
-let nsVersion = "9.1.2-next.2026-11-19-44596177506"
+let nsVersion = "9.1.2-next.2026-11-20-44643406827"
 let releaseBase = "https://github.com/NativeScript/ios/releases/download/v\(nsVersion)"
 
 let package = Package(
@@ -43,27 +43,32 @@ let package = Package(
     products: [
         // iOS family (iphoneos + iphonesimulator + Mac Catalyst). Apps built by
         // the NativeScript CLI link their own metadata and use this product.
-        .library(name: "NativeScript", targets: ["NativeScript", "TKLiveSync"]),
+        .library(name: "NativeScript", targets: ["NativeScript", "TKLiveSync", "NativeScriptLeakProbe"]),
         // For embedding NativeScript into an existing app: also bundles default
         // iOS SDK metadata, used when the host provides none of its own.
-        .library(name: "NativeScriptSDK", targets: ["NativeScript", "TKLiveSync", "NativeScriptDefaultMetadata"]),
+        .library(name: "NativeScriptSDK", targets: ["NativeScript", "TKLiveSync", "NativeScriptLeakProbe", "NativeScriptDefaultMetadata"]),
     ],
     dependencies: [],
     targets: [
         .binaryTarget(
             name: "NativeScript",
             url: "\(releaseBase)/NativeScript.xcframework.zip",
-            checksum: "c179630dc9d45646069d5f87aac6e1c480d3ba59b1584e6f266980050e3062cc"
+            checksum: "0a97170d84632874d96e9d4dfecb48a93b4925755630670a6c16bd069676c48a"
         ),
         .binaryTarget(
             name: "TKLiveSync",
             url: "\(releaseBase)/TKLiveSync.xcframework.zip",
-            checksum: "a69e62d012ec3f8cec66c04a5a7c884c720ef64d1a8f99dd004d02d3ca6fe187"
+            checksum: "1dd30ab54dc86a8d38696bc7db96c59823ad5fe5d3f340adbae4e707397fb27f"
+        ),
+        .binaryTarget(
+            name: "NativeScriptLeakProbe",
+            url: "\(releaseBase)/NativeScriptLeakProbe.xcframework.zip",
+            checksum: "c3bcd2973c6a69028c627dfa0cdb93b767d80a01fe63ba35595b52ddc164bc0c"
         ),
         .binaryTarget(
             name: "NativeScriptDefaultMetadata",
             url: "\(releaseBase)/NativeScriptDefaultMetadata.xcframework.zip",
-            checksum: "ff705e0151783f4d73ca089794c27dce12c42809babbc2d00e4fc22877e5adf8"
+            checksum: "561da1bba88886d5408f7fc93b6170bfbcb8bcf1e5e47a902f41583d25484f1e"
         ),
     ]
 )
