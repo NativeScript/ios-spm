@@ -31,7 +31,7 @@
 
 import PackageDescription
 
-let nsVersion = "9.1.2-next.2026-11-23-45255582945"
+let nsVersion = "9.1.2-next.2026-11-26-45896428412"
 let releaseBase = "https://github.com/NativeScript/ios/releases/download/v\(nsVersion)"
 
 let package = Package(
@@ -53,22 +53,22 @@ let package = Package(
         .binaryTarget(
             name: "NativeScript",
             url: "\(releaseBase)/NativeScript.xcframework.zip",
-            checksum: "9d283b8bd9cde6b9b12d71121468643747fdba894a3a6f2962bbcf2974e8ee91"
+            checksum: "fd1293ca371f09daa1905657e84eefb7fb6ed4bf4c15fb446c84cc2bdf05b869"
         ),
         .binaryTarget(
             name: "TKLiveSync",
             url: "\(releaseBase)/TKLiveSync.xcframework.zip",
-            checksum: "234ffc431d05de6646c0a3946e625ba261daaef609e6e6b688583aadff45715e"
+            checksum: "5e671295c376704ab052a7248450906a04358dd7fe3b2a751eadd495d4af1a04"
         ),
         .binaryTarget(
             name: "NativeScriptLeakProbe",
             url: "\(releaseBase)/NativeScriptLeakProbe.xcframework.zip",
-            checksum: "1ad39cdf31d3f2115595d8fd128c3d129a9165dbb1eaf0c0393c564ba07d75e9"
+            checksum: "5a608b7df0d8c0a89d7249c7239e910c78c4915e79b58ae07ed07bdaeef47c73"
         ),
         .binaryTarget(
             name: "NativeScriptDefaultMetadata",
             url: "\(releaseBase)/NativeScriptDefaultMetadata.xcframework.zip",
-            checksum: "c101137aa7fd0a61ced0ce1b95efc30ffd77f569ec0f24238a800b00b5df8046"
+            checksum: "969e87a2062b93d2805c5e37c386ad74f1aa83f9f6b977b2f198bb0cc64d5ce0"
         ),
     ]
 )
